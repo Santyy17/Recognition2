@@ -4,8 +4,7 @@ clc
 %     Fragmento en el tiempo intermedio        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%probado y funciona con E0 E5 A5 Mi5 G2 ... no funciona en todos los
-%valores
+
 string_note = G4;
 
 figure(1)
@@ -14,30 +13,30 @@ xlabel('N muestras');
 ylabel('Amplitud');
 title('Grafica de la nota a analizar');
 
-    Signal = string_note(19565:20565); % tramo de la señal con mil muestras
+    Signal = string_note(19565:20565); % tramo de la seÃ±al con mil muestras
     fs = 11025; %Hz  S/s
     
 figure(2)
 plot(Signal);
 xlabel('N muestras');
 ylabel('Amplitud');
-title('Fragmento de señal con mil muestras para mejor visualización');
+title('Fragmento de seÃ±al con mil muestras para mejor visualizaciÃ³n');
 
-    NSignal  = Signal > 0.000001; %normalizo en cruzes por cero para ... 
-    NSignalD = double(NSignal);   %aproximarme a la f de la señal Logic2
-                                  %double
+    NSignal  = Signal > 0.000001; %normaliza 
+    NSignalD = double(NSignal);   
+                                  
 figure(3)
-plot(NSignalD);                   %la señal es aproximadamente cuadrada
+plot(NSignalD);                   
 xlabel('N muestras');
 ylabel('Amplitud Normalizada');   
-title('fragmento de señal normalizada con los valores mayores a cero');
+title('fragmento de seÃ±al normalizada con los valores mayores a cero');
 
-    FTSignal  = fft(NSignalD);    %transformo en dominio de fourier
+    FTSignal  = fft(NSignalD);    
     FTSignal2 = abs(FTSignal);
   
 figure(4)
-plot(FTSignal2(1:length(FTSignal2)/2)); %grafica de la transformada
-title('transformada de Fourier de la señal normalizada');
+plot(FTSignal2(1:length(FTSignal2)/2)); %grafica 
+title('transformada de Fourier de la seÃ±al normalizada');
 xlabel('frecuencia');
 ylabel('Magnitud (pendiente de valor)');
 
@@ -50,8 +49,7 @@ ylabel('Magnitud (pendiente de valor)');
 %     Fragmento en el tiempo intermedio        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%probado y funciona con E0 E5 A5 Mi5 G2 ... no funciona en todos los
-%valores
+
 close all
 clc
 
@@ -77,7 +75,7 @@ figure(9)
 plot(YnormD);                                                               
 xlabel('Datos');
 ylabel('Amplitud');
-title('Señal de sonido normalizada (toda la grabacion)');
+title('SeÃ±al de sonido normalizada (toda la grabacion)');
     
 
     TF = fft(YnormD,l);                                                     
@@ -89,7 +87,7 @@ FT_discrete = (abs(g(1:5:length(g))));
 stem(FT_discrete);                                                          
 xlabel('Frecuencia (Hrz)');
 ylabel('Amplitud');
-title('Transformada de fourier con la señal normalizada');
+title('Transformada de fourier con la seÃ±al normalizada');
     
     Note_frecuency = 0;
                                                                             
